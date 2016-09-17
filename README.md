@@ -1,7 +1,12 @@
 # ParseBuddy
 ParseBuddy
 
-ParseBuddy is a simple parsing tool that takes in CSV data as a string and converts it to JSON.
+ParseBuddy is a simple parsing tool that can parse
 
-To view the demo, please click here:
+1. CSV to JSON
+2. JSON to CSV
+
+To view the demo and documentation:
 https://dev-z.github.io/ParseBuddy/
+
+
