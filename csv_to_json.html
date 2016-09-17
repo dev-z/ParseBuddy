@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/common.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="MyCtrl">
+	<div id="page-head">
+		<h2 class="text-center">ParseBuddy</h2>
+		<h2 class="text-center"><small>A simple parsing tool made in JavaScript</small></h2>
+	</div>
+	<div class="container-fluid page-wrap">
+		<h3 class="text-center">Demo</h3>
+		<div class="row" id="demo-sec">
+			<div class="col-md-6">
+				<h4>Paste in your CSV data here:</h4>
+				<textarea id="ip" ></textarea>
+				<a href="#" ng-click="myFunc()" class="btn btn-block btn-primary">Click to convert</a>
+			</div>
+			<div class="col-md-6">
+				<h4>Get your JSON data here:</h4>
+				<!-- If using plain JavaScript -->
+				<!-- <pre id="op" style="height: 60vh"></pre> -->
+				<pre id="op">{{myData | json}}</pre>
+				<a id="cpyBtn" href="#" data-clipboard-target="#op" class="btn btn-block btn-primary">Copy to Clipboard</a>
+			</div>
+		</div>
+		<div class="usage-sec">
+			<h3 class="text-center">Usage</h3>
+			<p><strong>Step 1: </strong>Download the "csvtojson.js" file and include it via the script tag.</p>
+			<pre>&lt;script src=&quot;scripts/csvtojson.js&quot;&gt;&lt;/script&gt;</pre>
+			<p><strong>Step 2: </strong>Call csvToJson() function from your js code and pass in the csv data as a string.</p>
+			<p style="text-indent:4em">csvToJson() takes two parameters:</p>
+			<p style="text-indent:6em">1. inputData (required) - which is the csv data,</p>
+			<p style="text-indent:6em">2. delimiter (optional) - the delimiter in your csv data. Default is , (comma)</p>
+			<p><strong>Step 3: </strong>Store the returned JSON data in some variable and use it as you wish!</p>
+			<pre>var inp = document.getElementById("inputTextArea").value;
+//I'm fetching my data from a textarea, you can have any other source you want.
+var output = csvToJson(inp);</pre>
+		</div>
+	</div>
+
+	<footer class="text-center site-footer">
+		<p>Made with love, by Ishtiaque Zafar</p>
+	</footer>
+
+<script src="scripts/csvtojson.js"></script>
+<script src="scripts/clipboard.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+	//Thanks to user Zeno Rocha @ https://github.com/zenorocha
+	//for the clipboard.js library used here for copying the results to the user's clipboard.
+	new Clipboard("#cpyBtn");
+
+	//using AngularJS
+	angular.module("myApp", []);
+	angular.module("myApp").controller("MyCtrl", function($scope){
+		$scope.myData;
+		$scope.myFunc = function myFunc2(){
+			var inp1 = document.getElementById("ip").value;
+			$scope.myData = csvToJson(inp1);
+		}
+	});
+
+	//Using plain JavaScript
+	/*
+	 function myFunc(){
+	 var inp = document.getElementById("ip").value; //or any other source you want
+	 document.getElementById("op").innerHTML = csvToJson(inp);
+	 }
+	 */
+
+</script>
+</body>
+</html>

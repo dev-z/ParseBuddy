@@ -1,0 +1,69 @@
+#ip{
+    height: 60vh;
+    max-height: 60vh;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0px;
+}
+#op{
+    height: 60vh;
+    margin-bottom: 5px;
+    border-radius: 0px;
+}
+#demo-sec{
+    margin: 0em 3em;
+}
+footer{
+    background-color: crimson;
+    color: white;
+    padding: 2em;
+}
+#page-head{
+    background-color: orange;
+    padding: 0px;
+}
+#page-head > h2{
+    margin: 0;
+}
+#page-head > h2:first-child{
+    padding-top: 1em;
+}
+#page-head > h2:last-child{
+    padding-bottom: 1em;
+}
+/* Mostly: http://ryanfait.com/sticky-footer/ */
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -5em;
+    background: #F4F4F4 url(../images/noisebg.png);
+    padding-top: 1.5em;
+}
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+.site-footer, .page-wrap:after {
+    /* .push must be the same height as footer */
+    height: 5em;
+}
+.site-footer {
+    background: orange;
+    padding-top: 2em;
+}
+.usage-sec {
+    width: 60%;
+    margin: 2em auto;
+
+}
+@media only screen and (max-width: 950px){
+    .usage-sec {
+        width: 100%;
+    }
+}

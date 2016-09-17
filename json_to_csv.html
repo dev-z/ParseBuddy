@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/common.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="MyCtrl">
+	<div id="page-head">
+		<h2 class="text-center">ParseBuddy</h2>
+		<h2 class="text-center"><small>A simple parsing tool made in JavaScript</small></h2>
+	</div>
+	<div class="container-fluid page-wrap">
+		<h3 class="text-center">Demo</h3>
+		<div class="row" id="demo-sec">
+			<div class="col-md-6">
+				<h4>Sample JSON data:</h4>
+				<pre id="ip">{{myJSONData | json}}</pre>
+			</div>
+			<div class="col-md-6">
+				<h4>Converted CSV Output:</h4>
+				<!-- If using plain JavaScript -->
+				<!-- <pre id="op" style="height: 60vh"></pre> -->
+				<pre id="op">{{myCSVData}}</pre>
+			</div>
+		</div>
+		<div class="usage-sec">
+			<h3 class="text-center">Usage</h3>
+			<p><strong>Step 1: </strong>Download the "jsontocsv.js" file and include it via the script tag.</p>
+			<pre>&lt;script src=&quot;scripts/jsontocsv.js&quot;&gt;&lt;/script&gt;</pre>
+			<p><strong>Step 2: </strong>Call csvToJson() function from your js code and pass in the csv data as a string.</p>
+			<p style="text-indent:4em">csvToJson() takes two parameters:</p>
+			<p style="text-indent:6em">1. inputData (required) - which is the JSON object,</p>
+			<p style="text-indent:6em">2. delimiter (optional) - the delimiter you want in your CSV data. Default is , (comma)</p>
+			<pre>var myJSONData = [{a: 1, b: 2, c: 3, d:4}, {a: 11, b: 22, c: 33, d:44}, {a: 111, b: 222, c: 333, d:444}];
+var myCSVData = jsonToCsv(myJSONData);</pre>
+			<p><strong>Output: </strong></p>
+			<pre>a,b,c,d
+1,2,3,4
+11,22,33,44
+111,222,333,444</pre>
+		</div>
+	</div>
+	<footer class="text-center site-footer">
+		<p>Made with love, by Ishtiaque Zafar</p>
+	</footer>
+<script src="scripts/jsontocsv.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+	var myJSONData = [
+		{
+			"batting_score": 0,
+			"wickets": "-",
+			"runs_conceded": "-",
+			"catches": 0,
+			"stumps": 0,
+			"opposition": "v Pakistan",
+			"ground": "Gujranwala",
+			"date": "18 Dec 1989",
+			"match_result": "lost",
+			"result_margin": "7 runs",
+			"toss": "won",
+			"batting_innings": "2nd"
+		},
+		{
+			"batting_score": 0,
+			"wickets": "-",
+			"runs_conceded": "-",
+			"catches": 0,
+			"stumps": 0,
+			"opposition": "v New Zealand",
+			"ground": "Dunedin",
+			"date": "1 Mar 1990",
+			"match_result": "lost",
+			"result_margin": "108 runs",
+			"toss": "won",
+			"batting_innings": "2nd"
+		}
+	];
+	//using AngularJS
+	angular.module("myApp", []);
+	angular.module("myApp").controller("MyCtrl", function($scope){
+		$scope.myJSONData = [
+			{
+				"batting_score": 0,
+				"wickets": "-",
+				"runs_conceded": "-",
+				"catches": 0,
+				"stumps": 0,
+				"opposition": "v Pakistan",
+				"ground": "Gujranwala",
+				"date": "18 Dec 1989",
+				"match_result": "lost",
+				"result_margin": "7 runs",
+				"toss": "won",
+				"batting_innings": "2nd"
+			},
+			{
+				"batting_score": 0,
+				"wickets": "-",
+				"runs_conceded": "-",
+				"catches": 0,
+				"stumps": 0,
+				"opposition": "v New Zealand",
+				"ground": "Dunedin",
+				"date": "1 Mar 1990",
+				"match_result": "lost",
+				"result_margin": "108 runs",
+				"toss": "won",
+				"batting_innings": "2nd"
+			}
+		];
+		$scope.myCSVData = jsonToCsv($scope.myJSONData);
+	});
+	//var myCSVData = jsonToCsv(myJSONData);
+</script>
+</body>
+</html>
