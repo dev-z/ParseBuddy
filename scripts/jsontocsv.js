@@ -1,5 +1,8 @@
 /**
  * Created by Ishtiaque on 9/17/2016.
+ * DO NOT USE THIS FILE, AS THIS IS JUST FOR MODULARITY PURPOSES
+ * USE dist/parseBuddy.js instead
+ * MAY THE SOURCE BE WITH YOU
  */
 function jsonToCsv(input, delimiter, wrapInQuotes){
 	"use strict";

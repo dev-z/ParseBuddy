@@ -1,5 +1,8 @@
 /**
  * Created by Ishtiaque on 9/8/2016.
+ * DO NOT USE THIS FILE, AS THIS IS JUST FOR MODULARITY PURPOSES
+ * USE dist/parseBuddy.js instead
+ * MAY THE SOURCE BE WITH YOU
  */
 function csvToJson(ipStr, delimiter){
 

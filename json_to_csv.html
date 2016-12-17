@@ -36,14 +36,14 @@
 		</div>
 		<div class="usage-sec">
 			<h3 class="text-center">Usage</h3>
-			<p><strong>Step 1: </strong>Download the "jsontocsv.js" file and include it via the script tag.</p>
-			<pre>&lt;script src=&quot;scripts/jsontocsv.js&quot;&gt;&lt;/script&gt;</pre>
-			<p><strong>Step 2: </strong>Call csvToJson() function from your js code and pass in the csv data as a string.</p>
-			<p style="text-indent:4em">csvToJson() takes two parameters:</p>
+			<p><strong>Step 1: </strong>Download the "parsebuddy.js" file and include it via the script tag.</p>
+			<pre>&lt;script src=&quot;pathto/parsebuddy.js&quot;&gt;&lt;/script&gt;</pre>
+			<p><strong>Step 2: </strong>Call parseBuddy.jsonToCsv() function from your js code and pass in the json object.</p>
+			<p style="text-indent:4em">jsonToCsv() takes two parameter:</p>
 			<p style="text-indent:6em">1. inputData (required) - which is the JSON object,</p>
 			<p style="text-indent:6em">2. delimiter (optional) - the delimiter you want in your CSV data. Default is , (comma)</p>
 			<pre>var myJSONData = [{a: 1, b: 2, c: 3, d:4}, {a: 11, b: 22, c: 33, d:44}, {a: 111, b: 222, c: 333, d:444}];
-var myCSVData = jsonToCsv(myJSONData);</pre>
+var myCSVData = parseBuddy.jsonToCsv(myJSONData);</pre>
 			<p><strong>Output: </strong></p>
 			<pre>a,b,c,d
 1,2,3,4
@@ -54,7 +54,7 @@ var myCSVData = jsonToCsv(myJSONData);</pre>
 	<footer class="text-center site-footer">
 		<p>Made with love, by Ishtiaque Zafar</p>
 	</footer>
-<script src="scripts/jsontocsv.js"></script>
+<script src="dist/parsebuddy.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script>
 	var myJSONData = [
@@ -120,9 +120,9 @@ var myCSVData = jsonToCsv(myJSONData);</pre>
 				"batting_innings": "2nd"
 			}
 		];
-		$scope.myCSVData = jsonToCsv($scope.myJSONData);
+		$scope.myCSVData = parseBuddy.jsonToCsv($scope.myJSONData);
 	});
-	//var myCSVData = jsonToCsv(myJSONData);
+	//var myCSVData = parseBuddy.jsonToCsv(myJSONData);
 </script>
 </body>
 </html>

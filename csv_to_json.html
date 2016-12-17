@@ -37,16 +37,16 @@
 		</div>
 		<div class="usage-sec">
 			<h3 class="text-center">Usage</h3>
-			<p><strong>Step 1: </strong>Download the "csvtojson.js" file and include it via the script tag.</p>
-			<pre>&lt;script src=&quot;scripts/csvtojson.js&quot;&gt;&lt;/script&gt;</pre>
-			<p><strong>Step 2: </strong>Call csvToJson() function from your js code and pass in the csv data as a string.</p>
+			<p><strong>Step 1: </strong>Download the "parsebuddy.js" file and include it via the script tag.</p>
+			<pre>&lt;script src=&quot;pathto/parsebuddy.js&quot;&gt;&lt;/script&gt;</pre>
+			<p><strong>Step 2: </strong>Call parseBuddy.csvToJson() function from your js code and pass in the csv data as a string.</p>
 			<p style="text-indent:4em">csvToJson() takes two parameters:</p>
 			<p style="text-indent:6em">1. inputData (required) - which is the csv data,</p>
 			<p style="text-indent:6em">2. delimiter (optional) - the delimiter in your csv data. Default is , (comma)</p>
 			<p><strong>Step 3: </strong>Store the returned JSON data in some variable and use it as you wish!</p>
 			<pre>var inp = document.getElementById("inputTextArea").value;
 //I'm fetching my data from a textarea, you can have any other source you want.
-var output = csvToJson(inp);</pre>
+var output = parseBuddy.csvToJson(inp);</pre>
 		</div>
 	</div>
 
@@ -54,7 +54,7 @@ var output = csvToJson(inp);</pre>
 		<p>Made with love, by Ishtiaque Zafar</p>
 	</footer>
 
-<script src="scripts/csvtojson.js"></script>
+<script src="dist/parsebuddy.js"></script>
 <script src="scripts/clipboard.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script>
@@ -68,7 +68,7 @@ var output = csvToJson(inp);</pre>
 		$scope.myData;
 		$scope.myFunc = function myFunc2(){
 			var inp1 = document.getElementById("ip").value;
-			$scope.myData = csvToJson(inp1);
+			$scope.myData = parseBuddy.csvToJson(inp1);
 		}
 	});
 
@@ -76,7 +76,7 @@ var output = csvToJson(inp);</pre>
 	/*
 	 function myFunc(){
 	 var inp = document.getElementById("ip").value; //or any other source you want
-	 document.getElementById("op").innerHTML = csvToJson(inp);
+	 document.getElementById("op").innerHTML = parseBuddy.csvToJson(inp);
 	 }
 	 */
 

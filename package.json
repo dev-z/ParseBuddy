@@ -1,0 +1,26 @@
+{
+  "name": "parse-buddy",
+  "version": "1.0.0",
+  "description": "JS Library for converting data from CSV to JSON and JSON to CSV.",
+  "main": "dist/parsebuddy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev-z/ParseBuddy.git"
+  },
+  "keywords": [
+    "csv",
+    "json",
+    "parse",
+    "csvtojson",
+    "jsontocsv"
+  ],
+  "author": "'Ishtiaque <'ishtiaque.zafar92@gmail.com'> (https://dev-z.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dev-z/ParseBuddy/issues"
+  },
+  "homepage": "https://github.com/dev-z/ParseBuddy#readme"
+}
