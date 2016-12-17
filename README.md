@@ -12,7 +12,7 @@ https://dev-z.github.io/ParseBuddy/
 ## Install
 * Old school method - download parsebuddy.js and include it in your html.
 
-        <script src="path/to/pasrsebuddy.js">
+        <script src="path/to/parsebuddy.js">
 
 * Coming soon - install via npm or bower
 
